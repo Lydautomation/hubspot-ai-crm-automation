@@ -299,7 +299,7 @@ The complete system is documented across five architecture diagrams.
 
 # Demo
 
-## 🎥 See the System in Action
+## See the System in Action
 
 The full walkthrough demonstrates how the system manages a business enquiry from initial lead capture through CRM management, sales pipeline follow-up, customer onboarding, and lead reactivation.
 
