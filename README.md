@@ -2,9 +2,9 @@
 
 ### End-to-End CRM Automation for Lead Capture, Qualification, Sales Follow-Up, Customer Onboarding & Lead Reactivation
 
-A production-minded CRM automation system built with **n8n, HubSpot, AI, Tally, Gmail, Google Sheets, and Slack** to manage the operational lifecycle of a B2B customer — from the first enquiry through CRM management, sales follow-up, customer onboarding, and the reactivation of inactive opportunities.
+A CRM automation system built with **n8n, HubSpot, AI, Tally, Gmail, Google Sheets, and Slack** to manage the customer journey from the first enquiry through sales, onboarding, and reactivation.
 
-The system reduces repetitive CRM administration, improves pipeline visibility, supports timely sales follow-up, and creates a structured transition from sales to customer onboarding.
+The goal is simple: reduce repetitive CRM work, keep sales opportunities organized, make follow-up more consistent, and create a smoother handoff from sales to customer onboarding.
 
 > **Lead enters → AI qualifies → CRM is organized → Sales gets actionable follow-up → Deal is won → Onboarding begins → Inactive opportunities can be reactivated.**
 
@@ -28,19 +28,17 @@ Sales teams may have to:
 
 Without a structured process, this can lead to **missed follow-ups, inconsistent CRM records, forgotten opportunities, and unnecessary administrative work**.
 
-The challenge is not simply capturing leads.
-
-It is managing the operational work that happens throughout the **customer lifecycle**.
+The challenge is not just getting a lead into the CRM. It is keeping the right processes moving after that.
 
 ---
 
 ## The Solution
 
-This system connects lead management, sales pipeline operations, customer onboarding, and lead reactivation into one structured CRM automation system.
+This project connects four areas of the CRM process: lead management, sales follow-up, customer onboarding, and lead reactivation.
 
-A new enquiry enters through the lead form. n8n processes the submission, AI evaluates the opportunity, and HubSpot becomes the central system of record for the contact, company, deal, qualification, priority, ownership, and next action.
+When a new enquiry comes in, n8n processes the submission, AI helps assess the opportunity, and HubSpot keeps the customer and sales information organized.
 
-The connected workflows support the customer lifecycle while keeping important sales decisions under human control.
+The workflows then continue from there:
 
 ```text
 Lead Enquiry
@@ -64,7 +62,7 @@ Workflow 4 — Lead Reactivation
 Return to Active Sales Management
 ```
 
-> **The goal is to automate repetitive operational work without taking important customer and commercial decisions away from the sales team.**
+The automation handles the repetitive operational work, while the salesperson remains responsible for important customer and commercial decisions.
 
 ---
 
@@ -72,23 +70,23 @@ Return to Active Sales Management
 
 ### AI-Powered Lead Management
 
-Processes new enquiries, evaluates qualification and priority, and prepares structured information for CRM processing.
+Processes new enquiries, assesses qualification and priority, and prepares the information needed for CRM processing.
 
 ### Automated CRM Record Management
 
-Checks for existing Contacts, Companies, and Deals before creating or updating CRM records.
+Checks for existing Contacts, Companies, and Deals before creating or updating records.
 
 ### AI Pipeline Health Analysis
 
-Regularly reviews active opportunities and identifies deals that may require sales attention.
+Reviews active opportunities and identifies deals that may need sales attention.
 
 ### Risk-Based Follow-Up
 
-AI evaluates deal context and recommends the appropriate sales action, including risk level, task title, and task description.
+AI looks at the deal context and recommends the appropriate follow-up, including the risk level, task title, and task description.
 
 ### Dynamic Follow-Up Scheduling
 
-The urgency of the AI assessment determines how quickly the sales owner should act.
+The urgency of the assessment determines when the sales owner should follow up.
 
 ```text
 HIGH   → Next day at 9 AM
@@ -98,29 +96,29 @@ LOW    → In 3 days at 9 AM
 
 ### Automated Customer Onboarding
 
-Closed-Won deals transition into a structured onboarding process with client communication, information collection, CRM tasks, tracking, and internal notifications.
+Closed-Won deals move into a structured onboarding process that handles client communication, information collection, CRM tasks, tracking, and internal notifications.
 
 ### Lead Reactivation
 
-Open opportunities that remain inactive for **30+ days** can be identified and prepared for controlled re-engagement.
+Open opportunities that have been inactive for **30+ days** can be identified and considered for re-engagement.
 
 ### Duplicate Protection
 
-The system checks existing CRM state, tasks, onboarding records, and recent outreach before creating new operational actions.
+The workflows check existing CRM records, tasks, onboarding states, and recent outreach before creating new actions.
 
 ### Human-in-the-Loop Sales Control
 
-Automation analyzes, recommends, and prepares operational actions, while the salesperson retains responsibility for the final sales decision.
+The automation analyzes the available information and prepares actions, but the salesperson makes the final sales decision.
 
 ---
 
 # How It Works
 
-The system consists of four connected workflows that support different stages of the CRM lifecycle.
+The project is made up of four connected workflows, each handling a different part of the CRM lifecycle.
 
 ## Workflow 1 — AI-Powered Lead Management
 
-A prospect submits a business enquiry through the lead form.
+A prospect starts by submitting a business enquiry through the lead form.
 
 The workflow:
 
@@ -135,7 +133,7 @@ The workflow:
 9. Records qualification, priority, and next action
 10. Sends the appropriate client and internal communication
 
-**Outcome:** a raw enquiry becomes an organized CRM opportunity ready for sales follow-up.
+**Outcome:** the enquiry arrives in HubSpot as an organized opportunity that is ready for sales follow-up.
 
 ---
 
@@ -143,7 +141,7 @@ The workflow:
 
 Getting opportunities into HubSpot is only the beginning.
 
-This workflow performs a scheduled health check of active opportunities and evaluates the context around each deal.
+This workflow runs a scheduled health check of active opportunities and looks at the information around each deal.
 
 It considers:
 
@@ -160,21 +158,21 @@ It considers:
 - Priority
 - Next action
 
-AI then determines whether the opportunity is healthy or requires attention.
+AI then determines whether the opportunity looks healthy or needs attention.
 
-When action is required, the system prepares a recommended follow-up and creates an appropriate HubSpot task for the sales owner.
+When follow-up is needed, the workflow prepares a recommendation and creates an appropriate HubSpot task for the sales owner.
 
-Existing active follow-up tasks are checked first to prevent unnecessary duplicates.
+Before creating a task, it checks for an existing active follow-up task to avoid unnecessary duplicates.
 
-**Outcome:** the CRM actively helps the sales team identify where attention is needed.
+**Outcome:** sales gets a clearer view of which opportunities need attention and what action should happen next.
 
 ---
 
 ## Workflow 3 — Customer Onboarding
 
-When the salesperson moves an opportunity to **Closed Won**, the sales process transitions into customer onboarding.
+When the salesperson moves an opportunity to **Closed Won**, the sales process moves into customer onboarding.
 
-The deal remains **Closed Won** while the operational handoff begins.
+The deal stays **Closed Won** while the operational handoff takes place.
 
 ```text
 Closed Won
@@ -198,7 +196,7 @@ Slack Notification
 Prepare Project Kickoff
 ```
 
-The onboarding process collects information such as:
+The onboarding process collects:
 
 - Company details
 - Contact information
@@ -209,9 +207,9 @@ The onboarding process collects information such as:
 - Important project notes
 - Additional information
 
-The submission is matched back to the correct onboarding process using the onboarding and deal references.
+The submission is matched to the correct onboarding process using the onboarding and deal references.
 
-**Outcome:** the handoff from sales to delivery becomes structured and traceable.
+**Outcome:** the information needed to begin delivery is collected and passed to the right internal processes.
 
 ---
 
@@ -219,7 +217,7 @@ The submission is matched back to the correct onboarding process using the onboa
 
 Not every prospect is ready to buy immediately.
 
-The reactivation workflow runs daily and identifies **open opportunities that have been inactive for at least 30 days**.
+The reactivation workflow runs daily and looks for **open opportunities that have been inactive for at least 30 days**.
 
 The workflow:
 
@@ -238,7 +236,7 @@ The existing deal is preserved.
 
 No duplicate deal is created.
 
-**Outcome:** previously inactive opportunities have a structured path back into the sales pipeline.
+**Outcome:** an opportunity that has gone quiet still has a structured path back into the sales process.
 
 ---
 
@@ -268,31 +266,31 @@ The complete system is documented across five architecture diagrams.
 
 ### System Design Principle
 
-**HubSpot** serves as the central CRM system of record, while **n8n** orchestrates the workflows connecting CRM operations, AI analysis, forms, email, onboarding tracking, and internal notifications.
+**HubSpot** is the central CRM, while **n8n** connects the different parts of the process — CRM operations, AI analysis, forms, email, onboarding tracking, and internal notifications.
 
 ```text
                      Lead / Customer
                           │
                           ▼
-                    ┌───────────┐
-                    │    n8n    │
-                    │Orchestrator│
-                    └─────┬─────┘
-                          │
-              ┌────────────┼────────────┐
-              ▼            ▼            ▼
-         ┌─────────┐  ┌─────────┐  ┌─────────┐
-         │ HubSpot │  │ AI / LLM │  │  Tally  │
-         │   CRM   │  │          │  │  Forms  │
-         └────┬────┘  └─────────┘  └────┬────┘
-              │                          │
-              ▼                          ▼
-        Sales Operations          Client Onboarding
-              │                          │
-              └────────────┬─────────────┘
-                           ▼
-                     Gmail / Sheets /
-                        Slack
+                     ┌───────────┐
+                     │    n8n    │
+                     │Orchestrator│
+                     └─────┬─────┘
+                           │
+               ┌────────────┼────────────┐
+               ▼            ▼            ▼
+          ┌─────────┐  ┌─────────┐  ┌─────────┐
+          │ HubSpot │  │ AI / LLM │  │  Tally  │
+          │   CRM   │  │          │  │  Forms  │
+          └────┬────┘  └─────────┘  └────┬────┘
+               │                          │
+               ▼                          ▼
+         Sales Operations          Client Onboarding
+               │                          │
+               └────────────┬─────────────┘
+                            ▼
+                      Gmail / Sheets /
+                         Slack
 ```
 
 ---
@@ -301,7 +299,7 @@ The complete system is documented across five architecture diagrams.
 
 ## See the System in Action
 
-The full walkthrough demonstrates how the system manages a business enquiry from initial lead capture through CRM management, sales pipeline follow-up, customer onboarding, and lead reactivation.
+The walkthrough demonstrates how the system handles a business enquiry from initial lead capture through CRM management, sales pipeline follow-up, customer onboarding, and lead reactivation.
 
 **Demo video:** *Coming soon*
 
@@ -435,7 +433,7 @@ The final workflow that identifies inactive open opportunities and creates a con
 
 # Human-in-the-Loop
 
-The system is designed to support the sales team without removing human judgment from important customer decisions.
+The system supports the sales team without taking important customer decisions away from them.
 
 ```text
 Automation
@@ -461,7 +459,7 @@ Makes Final Sales Decision
 Moves Deal to Closed Won
 ```
 
-The automation does **not** automatically determine that a prospect has purchased.
+The automation does **not** decide that a prospect has purchased.
 
 The salesperson remains responsible for the final commercial decision.
 
@@ -471,15 +469,15 @@ The salesperson remains responsible for the final commercial decision.
 
 # Monitoring & Reliability
 
-The workflows include controls designed to make the system reliable and predictable in a real CRM environment.
+The workflows include several checks to keep the automation predictable and avoid unnecessary actions.
 
 ### Scheduled Pipeline Monitoring
 
-The pipeline health workflow runs on a scheduled basis to identify active opportunities that may require attention.
+The pipeline health workflow runs on a schedule to identify active opportunities that may require attention.
 
 ### 30-Day Reactivation Threshold
 
-Lead reactivation uses a defined inactivity threshold to avoid arbitrary or premature outreach.
+Lead reactivation uses a defined inactivity threshold rather than sending outreach to opportunities arbitrarily.
 
 ### Duplicate Protection
 
@@ -487,7 +485,7 @@ Existing CRM records, tasks, onboarding states, and recent outreach are checked 
 
 ### Existing Deal Preservation
 
-Reactivation works with the existing opportunity instead of creating a new duplicate deal.
+Reactivation works with the existing opportunity instead of creating a new deal.
 
 ### Follow-Up Task Protection
 
@@ -495,7 +493,7 @@ Existing active follow-up tasks are checked before another task is created.
 
 ### Onboarding Protection
 
-The onboarding workflow checks the onboarding state before initiating another onboarding process.
+The onboarding workflow checks the onboarding state before starting another onboarding process.
 
 ### Closed-Won Integrity
 
@@ -503,7 +501,7 @@ Customer onboarding does not reopen the sales opportunity. The deal remains **Cl
 
 ### Controlled Reactivation
 
-Reactivation outreach is only performed when the opportunity meets the defined inactivity and eligibility conditions.
+Reactivation outreach only takes place when the opportunity meets the defined inactivity and eligibility conditions.
 
 ---
 
