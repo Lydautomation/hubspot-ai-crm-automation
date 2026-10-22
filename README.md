@@ -7,9 +7,7 @@ A CRM automation system built with **n8n, HubSpot, AI, Tally, Gmail, Google Shee
 
 The goal is simple: reduce repetitive CRM work, keep sales opportunities organized, make follow-up more consistent, and create a smoother handoff from sales to customer onboarding.
 
-> **Lead enters → AI qualifies → CRM is organized → Sales gets actionable follow-up → Deal is won → Onboarding begins → Inactive opportunities can be reactivated.**
-
----
+Lead enters → AI qualifies → CRM is organized → Sales gets actionable follow-up → Deal is won → Onboarding begins → Inactive opportunities can be reactivated.
 
 ## The Problem
 
@@ -31,23 +29,21 @@ Without a structured process, this can lead to **missed follow-ups, inconsistent
 
 The challenge is not just getting a lead into the CRM. It is keeping the right processes moving after that.
 
----
-
 ## The Solution
 
 This project connects four areas of the CRM process: lead management, sales follow-up, customer onboarding, and lead reactivation.
 
 When a new enquiry comes in, n8n processes the submission, AI helps assess the opportunity, and HubSpot keeps the customer and sales information organized.
 
-The workflows then continue from there:
+The main sales journey is:
 
-**Main sales journey:** Lead Enquiry → Workflow 1 — AI Lead Management → Workflow 2 — Sales Pipeline & Follow-Up → Human Sales Decision → Closed Won → Workflow 3 — Customer Onboarding → Project Kickoff.
+**Lead Enquiry → Workflow 1 — AI Lead Management → Workflow 2 — Sales Pipeline & Follow-Up → Human Sales Decision → Closed Won → Workflow 3 — Customer Onboarding → Project Kickoff**
 
-**Reactivation path:** Inactive Open Opportunities → Workflow 4 — Lead Reactivation → Return to Active Sales Management.
+Inactive opportunities follow a separate path:
+
+**Inactive Open Opportunities → Workflow 4 — Lead Reactivation → Return to Active Sales Management**
 
 The automation handles the repetitive operational work, while the salesperson remains responsible for important customer and commercial decisions.
-
----
 
 # Core Capabilities
 
@@ -91,8 +87,6 @@ The workflows check existing CRM records, tasks, onboarding states, and recent o
 
 The automation analyzes the available information and prepares actions, but the salesperson makes the final sales decision.
 
----
-
 # How It Works
 
 The project is made up of four connected workflows, each handling a different part of the CRM lifecycle.
@@ -114,9 +108,7 @@ The workflow:
 9. Records qualification, priority, and next action
 10. Sends the appropriate client and internal communication
 
-**Outcome:** the enquiry arrives in HubSpot as an organized opportunity that is ready for sales follow-up.
-
----
+**Outcome:** The enquiry arrives in HubSpot as an organized opportunity that is ready for sales follow-up.
 
 ## Workflow 2 — Sales Pipeline & Follow-Up
 
@@ -145,9 +137,7 @@ When follow-up is needed, the workflow prepares a recommendation and creates an 
 
 Before creating a task, it checks for an existing active follow-up task to avoid unnecessary duplicates.
 
-**Outcome:** sales gets a clearer view of which opportunities need attention and what action should happen next.
-
----
+**Outcome:** Sales gets a clearer view of which opportunities need attention and what action should happen next.
 
 ## Workflow 3 — Customer Onboarding
 
@@ -155,7 +145,9 @@ When the salesperson moves an opportunity to **Closed Won**, the sales process m
 
 The deal stays **Closed Won** while the operational handoff takes place.
 
-**Onboarding sequence:** Closed Won → Onboarding Initiation → Onboarding Record → Welcome Email → Client Onboarding Form → Client Submission → Onboarding Record Update → Kickoff Task → Slack Notification → Prepare Project Kickoff.
+The onboarding process follows this sequence:
+
+**Closed Won → Onboarding Initiation → Onboarding Record → Welcome Email → Client Onboarding Form → Client Submission → Onboarding Record Update → Kickoff Task → Slack Notification → Prepare Project Kickoff**
 
 The onboarding process collects:
 
@@ -170,9 +162,7 @@ The onboarding process collects:
 
 The submission is matched to the correct onboarding process using the onboarding and deal references.
 
-**Outcome:** the information needed to begin delivery is collected and passed to the right internal processes.
-
----
+**Outcome:** The information needed to begin delivery is collected and passed to the right internal processes.
 
 ## Workflow 4 — Lead Reactivation
 
@@ -193,13 +183,9 @@ The workflow:
 9. Notifies the sales owner
 10. Returns the opportunity to active sales management
 
-The existing deal is preserved.
+The existing deal is preserved, and no duplicate deal is created.
 
-No duplicate deal is created.
-
-**Outcome:** an opportunity that has gone quiet still has a structured path back into the sales process.
-
----
+**Outcome:** An opportunity that has gone quiet still has a structured path back into the sales process.
 
 # Architecture — System Design
 
@@ -227,11 +213,9 @@ The complete system is documented across five architecture diagrams.
 
 ### System Design Principle
 
-**HubSpot** is the central CRM, while **n8n** connects the different parts of the process — CRM operations, AI analysis, forms, email, onboarding tracking, and internal notifications.
+**HubSpot** is the central CRM, while **n8n** connects the different parts of the process, including CRM operations, AI analysis, forms, email, onboarding tracking, and internal notifications.
 
-Lead and customer information enters through forms, and **n8n** coordinates the process. It connects **HubSpot CRM** with AI/LLM processing and **Tally** forms. HubSpot supports sales operations, while Tally collects onboarding details. **Gmail**, **Google Sheets**, and **Slack** support client communication, onboarding tracking, and internal notifications.
-
----
+Lead and customer information enters through forms, and n8n coordinates the process. It connects HubSpot CRM with AI/LLM processing and Tally forms. HubSpot supports sales operations, while Tally collects onboarding details. Gmail, Google Sheets, and Slack support client communication, onboarding tracking, and internal notifications.
 
 # Demo
 
@@ -239,11 +223,9 @@ Lead and customer information enters through forms, and **n8n** coordinates the 
 
 The walkthrough demonstrates how the system handles a business enquiry from initial lead capture through CRM management, sales pipeline follow-up, customer onboarding, and lead reactivation.
 
-**Demo video:** *Coming soon*
+**Demo video:** Coming soon
 
 The final walkthrough video will be added here once uploaded.
-
----
 
 # Project Screenshots
 
@@ -281,8 +263,6 @@ The AI-generated qualification and sales context used to support the sales proce
 
 ![AI Lead Qualification](screenshots/ai-lead-qualification.png)
 
----
-
 ## Sales Pipeline & Follow-Up
 
 ### 5. Workflow 2 — Pipeline Health
@@ -306,8 +286,6 @@ A follow-up task created based on the opportunity's current sales context.
 The sales owner is notified when an opportunity requires attention.
 
 ![Pipeline Health Notification](screenshots/pipeline-health-notification.png)
-
----
 
 ## Customer Onboarding
 
@@ -357,8 +335,6 @@ The internal notification that alerts the team that onboarding information is re
 
 ![Slack Onboarding Notification](screenshots/slack-onboarding-notification.png)
 
----
-
 ## Lead Reactivation
 
 ### 14. Workflow 4 — Lead Reactivation
@@ -366,8 +342,6 @@ The internal notification that alerts the team that onboarding information is re
 The final workflow that identifies inactive open opportunities and creates a controlled path for re-engagement.
 
 ![Workflow 4 — Lead Reactivation](screenshots/workflow-04-lead-reactivation.png)
-
----
 
 # Human-in-the-Loop
 
@@ -377,13 +351,9 @@ The system supports the sales team without taking important customer decisions a
 
 **Human:** Reviews the context → Engages the customer → Makes the final sales decision → Moves the deal to Closed Won.
 
-The automation does **not** decide that a prospect has purchased.
+The automation does **not** decide that a prospect has purchased. The salesperson remains responsible for the final commercial decision.
 
-The salesperson remains responsible for the final commercial decision.
-
-> **The automation handles repetitive operational work. The human remains in control of the customer relationship and final sales decision.**
-
----
+The automation handles repetitive operational work while the human remains in control of the customer relationship and final sales decision.
 
 # Monitoring & Reliability
 
@@ -421,8 +391,6 @@ Customer onboarding does not reopen the sales opportunity. The deal remains **Cl
 
 Reactivation outreach only takes place when the opportunity meets the defined inactivity and eligibility conditions.
 
----
-
 # Tech Stack
 
 | Technology | Purpose |
@@ -436,8 +404,6 @@ Reactivation outreach only takes place when the opportunity meets the defined in
 | **Slack** | Internal sales and onboarding notifications |
 | **HubSpot API** | CRM records, associations and task operations |
 | **JavaScript** | Data transformation, normalization and workflow logic |
-
----
 
 # Privacy & Data Handling
 
@@ -453,8 +419,6 @@ This project was designed with practical data-handling considerations in mind.
 
 For production deployments, authentication, permissions, data retention, access controls, and applicable privacy requirements should be configured according to the client's environment.
 
----
-
 # Built by Lydia Ogbene-Odey
 
 **AI Automation Specialist | Health Tech Automation | Sales & CRM Automation**
@@ -469,10 +433,8 @@ My work focuses on **AI-powered workflow automation, CRM automation, business pr
 - **GitHub:** https://github.com/Lydautomation
 - **LinkedIn:** https://linkedin.com/in/lydia-ogbene-odey-800268421
 
----
-
 ## Need a CRM or Business Process Automated?
 
 I build custom automation systems that connect CRMs, forms, AI, email, spreadsheets, communication platforms, and internal business processes.
 
-> **Let's automate the repetitive work so your team can focus on the work that actually grows the business.**
+Let's automate the repetitive work so your team can focus on the work that actually grows the business.
