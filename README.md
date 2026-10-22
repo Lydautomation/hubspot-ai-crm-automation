@@ -1,3 +1,4 @@
+
 # HubSpot AI Lead Management & Customer Onboarding System
 
 ### End-to-End CRM Automation for Lead Capture, Qualification, Sales Follow-Up, Customer Onboarding & Lead Reactivation
@@ -40,27 +41,9 @@ When a new enquiry comes in, n8n processes the submission, AI helps assess the o
 
 The workflows then continue from there:
 
-```text
-Lead Enquiry
-    ↓
-Workflow 1 — AI Lead Management
-    ↓
-Workflow 2 — Sales Pipeline & Follow-Up
-    ↓
-Human Sales Decision
-    ↓
-Closed Won
-    ↓
-Workflow 3 — Customer Onboarding
-    ↓
-Project Kickoff
+**Main sales journey:** Lead Enquiry → Workflow 1 — AI Lead Management → Workflow 2 — Sales Pipeline & Follow-Up → Human Sales Decision → Closed Won → Workflow 3 — Customer Onboarding → Project Kickoff.
 
-Inactive Open Opportunities
-    ↓
-Workflow 4 — Lead Reactivation
-    ↓
-Return to Active Sales Management
-```
+**Reactivation path:** Inactive Open Opportunities → Workflow 4 — Lead Reactivation → Return to Active Sales Management.
 
 The automation handles the repetitive operational work, while the salesperson remains responsible for important customer and commercial decisions.
 
@@ -88,11 +71,9 @@ AI looks at the deal context and recommends the appropriate follow-up, including
 
 The urgency of the assessment determines when the sales owner should follow up.
 
-```text
-HIGH   → Next day at 9 AM
-MEDIUM → In 2 days at 9 AM
-LOW    → In 3 days at 9 AM
-```
+- **HIGH:** Next day at 9 AM
+- **MEDIUM:** In 2 days at 9 AM
+- **LOW:** In 3 days at 9 AM
 
 ### Automated Customer Onboarding
 
@@ -174,27 +155,7 @@ When the salesperson moves an opportunity to **Closed Won**, the sales process m
 
 The deal stays **Closed Won** while the operational handoff takes place.
 
-```text
-Closed Won
-    ↓
-Onboarding Initiation
-    ↓
-Onboarding Record
-    ↓
-Welcome Email
-    ↓
-Client Onboarding Form
-    ↓
-Client Submission
-    ↓
-Onboarding Record Update
-    ↓
-Kickoff Task
-    ↓
-Slack Notification
-    ↓
-Prepare Project Kickoff
-```
+**Onboarding sequence:** Closed Won → Onboarding Initiation → Onboarding Record → Welcome Email → Client Onboarding Form → Client Submission → Onboarding Record Update → Kickoff Task → Slack Notification → Prepare Project Kickoff.
 
 The onboarding process collects:
 
@@ -268,30 +229,7 @@ The complete system is documented across five architecture diagrams.
 
 **HubSpot** is the central CRM, while **n8n** connects the different parts of the process — CRM operations, AI analysis, forms, email, onboarding tracking, and internal notifications.
 
-```text
-                     Lead / Customer
-                          │
-                          ▼
-                     ┌───────────┐
-                     │    n8n    │
-                     │Orchestrator│
-                     └─────┬─────┘
-                           │
-               ┌────────────┼────────────┐
-               ▼            ▼            ▼
-          ┌─────────┐  ┌─────────┐  ┌─────────┐
-          │ HubSpot │  │ AI / LLM │  │  Tally  │
-          │   CRM   │  │          │  │  Forms  │
-          └────┬────┘  └─────────┘  └────┬────┘
-               │                          │
-               ▼                          ▼
-         Sales Operations          Client Onboarding
-               │                          │
-               └────────────┬─────────────┘
-                            ▼
-                      Gmail / Sheets /
-                         Slack
-```
+Lead and customer information enters through forms, and **n8n** coordinates the process. It connects **HubSpot CRM** with AI/LLM processing and **Tally** forms. HubSpot supports sales operations, while Tally collects onboarding details. **Gmail**, **Google Sheets**, and **Slack** support client communication, onboarding tracking, and internal notifications.
 
 ---
 
@@ -435,29 +373,9 @@ The final workflow that identifies inactive open opportunities and creates a con
 
 The system supports the sales team without taking important customer decisions away from them.
 
-```text
-Automation
-    ↓
-Monitors
-    ↓
-Analyzes
-    ↓
-Recommends
-    ↓
-Creates Operational Tasks
-    ↓
-Notifies Sales Owner
+**Automation:** Monitors opportunities → Analyzes context → Recommends next steps → Creates operational tasks → Notifies the sales owner.
 
-Human
-    ↓
-Reviews Context
-    ↓
-Engages Customer
-    ↓
-Makes Final Sales Decision
-    ↓
-Moves Deal to Closed Won
-```
+**Human:** Reviews the context → Engages the customer → Makes the final sales decision → Moves the deal to Closed Won.
 
 The automation does **not** decide that a prospect has purchased.
 
